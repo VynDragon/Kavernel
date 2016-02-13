@@ -1,0 +1,22 @@
+- MMU emulator for mega2560
+- Unified architecture interface (C functions that call asm stuffs depending on architecture, thinks about making it generic enough to be compatible with x86 or ARM)
+- Kernel module loader
+- Multitask framework (m'interrupts)
+- Memory management following ELF scheme (
+- Way to map to memory or filesystem
+- Driver Framework
+
+Kernel modules:
+- Pin driver
+- Spi Driver
+- Serial debug driver
+- filesystem
+
+General design goals:
+- Mostly C
+- Generic
+- Minimal
+
+
+1st planned step: UAI:
+RISC style opcode system, but abstract from the platform? Preprocessor maybe // are we doing javaOS?

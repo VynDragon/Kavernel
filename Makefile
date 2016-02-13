@@ -49,16 +49,16 @@ $(EXEC): $(OBJ)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 
-.PHONY: clean rmproper re hex upload
+.PHONY: clean fclean re hex upload
 
 clean:
 	@rm -rf $(OBJ)
 	@rm -rf $(PREPPED_ASM)
 
-rmproper:
+fclean:
 	@rm -rf $(EXEC)
 
-re: clean rmproper all
+re: clean fclean all
 
 hex:
 	avr-objcopy -j .text -j .data -O ihex $(EXEC) $(EXEC).hex

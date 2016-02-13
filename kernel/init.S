@@ -3,6 +3,7 @@
 .section .text
 .global main
 main:
+    CLI
     LDI r16, RAM_END_HIGH
     OUT 0x3E, r16
     nop

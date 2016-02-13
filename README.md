@@ -1,3 +1,5 @@
-# Kavernel
+# Kavernel (not final name)
 
-Kernel for atmega 2560
+MicroKernel for shitty hardware (aimed at arduino mega2560 right now)
+
+
