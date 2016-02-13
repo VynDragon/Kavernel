@@ -1,10 +1,20 @@
-MMCU=atmega2560
+ARCH=avr
+CPU=atmega2560
+
+ifeq ($(ARCH), avr)
+MMCU=$(CPU)
 CC=avr-gcc -mmcu=$(MMCU)
+CFLAGS= -D CPU_$(CPU) 
+endif
+
+INCLUDE=./include
 # you actually NEED -O2
-CFLAGS=-W -Wall -O2
-LDFLAGS=
-EXEC=test
-SRC= test.c
+CFLAGS=-W -Wall -O2 -I$(INCLUDE) $(CFLAGS)
+LDFLAGS= $(LDFLAGS)
+EXEC=kernel
+
+SRC= 
+
 OBJ= $(SRC:.c=.o)
 
 
@@ -17,7 +27,7 @@ $(EXEC): $(OBJ)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 
-.PHONY: clean rmproper
+.PHONY: clean rmproper re hex upload
 
 clean:
 	@rm -rf $(OBJ)

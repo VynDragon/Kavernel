@@ -1,0 +1,16 @@
+#IFNDEF _TYPES_H_
+#DEFINE _TYPES_H_
+
+An architecture file must define the following types:
+
+int8_t      signed at least 8 bit integer
+uint8_t     unsigned at least 8 bit intege
+int16_t     signed at least 16 bit integer
+uint16_t    unsigned at least 16 bit integer
+int32_t     signed at least 32 bit integer
+uint32_t    unsigned at least 32 bit integer
+int64_t     signed at least 64 bit integer
+uint64_t    unsigned at least 64 bit integer
+float_t     at least 32 bit floating point
+double_t    at least 64 bit floating point
+
