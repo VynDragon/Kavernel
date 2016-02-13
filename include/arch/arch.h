@@ -1,9 +1,9 @@
-#IFNDEF _ARCH_H_
-#DEFINE _ARCH_H_
+#ifndef _ARCH_H_
+#define _ARCH_H_
 
-#IFDEF CPU_mega2560
+#ifdef CPU_atmega2560
 #include "arch/avr/atmega2560.h"
-#ENDIF
+#endif
 
 
-#ENDIF /* _ARCH_H_ */
+#endif /* _ARCH_H_ */
