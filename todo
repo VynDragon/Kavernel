@@ -1,7 +1,7 @@
 - MMU emulator for mega2560
-- Unified architecture interface (C functions that call asm stuffs depending on architecture, thinks about making it generic enough to be compatible with x86 or ARM)
+- Unified architecture interface (C functions that call asm stuffs depending on architecture, thinks about making it generic enough to be compatible with x86 or ARM) - turn out to be stupid and useless
 - Kernel module loader
-- Multitask framework (m'interrupts)
+- Multitask framework (m'interrupts) - let's use linux 'old' Staircase Deadline scheduler 
 - Memory management following ELF scheme (
 - Way to map to memory or filesystem
 - Driver Framework
@@ -20,3 +20,7 @@ General design goals:
 
 1st planned step: UAI:
 RISC style opcode system, but abstract from the platform? Preprocessor maybe // are we doing javaOS?
+
+
+Suggested idea: since we're going to have to read the code with a execution loop anyway for the mega2560, why not make the code LUA.
+Since we also want to support ELF (and machine code for other architecture), we could use "lua" ELF sections, and apply the usual interpretation scheme, but with the interprtation program running from the flash (also since the PC can't be moved to the ram lol)
